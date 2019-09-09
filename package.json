@@ -1,0 +1,48 @@
+{
+  "name": "@quickts/nestjs-mssql",
+  "version": "1.0.0",
+  "description": "A quickts project",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
+    "start:dev": "ts-node -r tsconfig-paths/register src/index.ts",
+    "start:prod": "node dist/index.js",
+    "test": "mocha -r tsconfig-paths/register -r ts-node/register --recursive -R spec test/*.ts"
+  },
+  "keywords": [
+    "quickts",
+    "nestjs-mssql"
+  ],
+  "author": "quickts",
+  "license": "MIT",
+  "devDependencies": {
+    "@nestjs/common": "^6.6.7",
+    "@nestjs/core": "^6.6.7",
+    "@nestjs/platform-express": "^6.6.7",
+    "@types/mocha": "^5.2.7",
+    "@types/mssql": "^4.3.0",
+    "@types/node": "^12.7.4",
+    "mocha": "^6.2.0",
+    "mssql": "^5.1.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.5.3",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@quickts/nestjs-scanner": "^1.0.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quickts/nestjs-mssql.git"
+  },
+  "bugs": "https://github.com/quickts/nestjs-mssql/issues",
+  "homepage": "https://github.com/quickts/nestjs-mssql#readme"
+}
