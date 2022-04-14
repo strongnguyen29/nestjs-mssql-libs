@@ -1,6 +1,6 @@
 {
   "name": "@strongnguyen/nestjs-mssql",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "connection module for mssql",
   "main": "dist/index.js",
   "scripts": {

@@ -1,4 +1,4 @@
-import {Global, Module, DynamicModule, Provider} from "@nestjs/common";
+import { Module, DynamicModule, Provider} from "@nestjs/common";
 import { config } from "mssql";
 import { createOptionProvider } from "./mssql.provider";
 import { MssqlService } from "./mssql.service";
@@ -20,9 +20,11 @@ export class MssqlModule {
     }
 
     static registerAsync(options: MssqlModuleAsyncOptions): DynamicModule {
+        const imports = [ScannerModule.forRoot(false)]
+        if (options.imports) imports.push(...imports)
         return {
             module: MssqlModule,
-            imports: [ScannerModule.forRoot(false), ...options.imports],
+            imports: imports,
             providers: [...this.createAsyncProviders(options), MssqlService],
             exports: [MssqlService]
         };
