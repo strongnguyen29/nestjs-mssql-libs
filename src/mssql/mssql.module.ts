@@ -20,8 +20,10 @@ export class MssqlModule {
     }
 
     static registerAsync(options: MssqlModuleAsyncOptions): DynamicModule {
-        const imports = [ScannerModule.forRoot(false)]
-        if (options.imports) imports.push(...imports)
+
+        let imports = options.imports ? [...options.imports] : []
+        imports.push(ScannerModule.forRoot(false))
+
         return {
             module: MssqlModule,
             imports: imports,
