@@ -1,4 +1,4 @@
-import {config, ConnectionPool} from "mssql";
+import {config, ConnectionPool, ISqlType} from "mssql";
 import {ModuleMetadata, Type} from "@nestjs/common";
 
 export interface OnMssqlPoolInit {
@@ -14,4 +14,16 @@ export interface MssqlModuleAsyncOptions extends Pick<ModuleMetadata, 'imports'>
     useClass?: Type<MssqlOptionFactory>;
     useFactory?: (...args: any[]) => Promise<config> | config;
     inject?: any[];
+}
+
+export type MssqlRequestInput = {
+    name: string,
+    type?: (() => ISqlType) | ISqlType,
+    value: any
+}
+
+export type MssqlRequestOutput = {
+    name: string,
+    type: (() => ISqlType) | ISqlType,
+    value?: any
 }
