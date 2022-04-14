@@ -74,6 +74,8 @@ Inject and the use `MssqlService` inside your services:
 ```ts
 // app.service.ts
 
+import sql = require('mssql');
+
 @Injectable()
 export class AppService {
     constructor(private mssql: MssqlService) {}
