@@ -7,9 +7,11 @@ Mssql module for nestjs
   npm install @strongnguyen/nestjs-mssql mssql
   npm install -D @types/mssql
 ```
-## Quick start
+## How to use
 
 Import and configure `MssqlModule` with the same configuration parameters accepted by `node-mssql`:
+
+[node-mssql config](https://www.npmjs.com/package/mssql#general-same-for-all-drivers)
 
 ```ts
 // app.module.ts
