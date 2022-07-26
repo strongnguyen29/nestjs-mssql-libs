@@ -68,7 +68,7 @@ export class MssqlService implements OnModuleInit, OnModuleDestroy {
         }
 
         const result = await request.execute(spName);
-        this.logger.debug(' execSP: RESULT: ' + JSON.stringify(result));
+        this.logger.debug(' execSP: RESULT: ' + JSON.stringify({ spName: spName, result: result }));
         // this.logger.log(result.recordsets[0].length); // count of rows contained in first recordset
         // this.logger.log(result.recordset); // first recordset from result.recordsets
         // this.logger.log(result.returnValue);
